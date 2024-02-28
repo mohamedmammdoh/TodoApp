@@ -17,7 +17,10 @@ class _TodoAppState extends State<TodoApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Poppins',
+      ),
       home: NotesView(),
     );
   }
