@@ -8,12 +8,17 @@ class showmodelbottonsheet extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 32.0, right: 15, left: 15),
       child: ListView(
-        children: [
+        children: const [
           Column(
             children: [
-              customtextformfield(hint_text: 'title'),
+              customtextformfield(
+                hint_text: 'title',
+              ),
               SizedBox(height: 30),
-              customtextformfield(hint_text: 'content'),
+              customtextformfield(
+                hint_text: 'content',
+                maxlines: 5,
+              ),
             ],
           ),
         ],
