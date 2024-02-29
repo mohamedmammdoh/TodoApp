@@ -21,7 +21,7 @@ class _TodoAppState extends State<TodoApp> {
         brightness: Brightness.dark,
         fontFamily: 'Poppins',
       ),
-      home: NotesView(),
+      home: const NotesView(),
     );
   }
 }
