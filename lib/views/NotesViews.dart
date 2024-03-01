@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/views/widgets/NotesViewBody.dart';
+import 'package:todoapp/views/widgets/listviewfornotes.dart';
 import 'package:todoapp/views/widgets/showmodelbottonsheet.dart';
 
 class NotesView extends StatelessWidget {
@@ -8,43 +9,50 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Notes',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white.withOpacity(0.3),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(3.0),
+                  child: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                )),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white.withOpacity(0.2),
         onPressed: () {
           showModalBottomSheet(
             context: context,
             builder: (context) {
-              return showmodelbottonsheet();
+              return const showmodelbottonsheet();
             },
           );
         },
-        child: const Icon(Icons.add),
-      ),
-      appBar: AppBar(
-        title: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Notes',
-            style: TextStyle(
-              fontSize: 27,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 28,
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  color: Colors.white,
-                  Icons.search,
-                  size: 28,
-                )),
-          )
-        ],
       ),
-      body: const NoteViewBody(),
+      body: NoteViewBody(),
     );
   }
 }
