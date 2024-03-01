@@ -4,7 +4,7 @@ import 'package:todoapp/constants.dart';
 import 'package:todoapp/cubit/addnote_cubit/addnote_state.dart';
 import 'package:todoapp/models/Notemodel.dart';
 
-class AddnoteCubit extends Cubit<NoteNoteState> {
+class AddnoteCubit extends Cubit<AddNoteState> {
   AddnoteCubit() : super(NoteInitial());
 
   addnote(NoteModel note) async {

@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
 
 @immutable
-abstract class NoteNoteState {}
+abstract class AddNoteState {}
 
-class NoteInitial extends NoteNoteState {}
+class NoteInitial extends AddNoteState {}
 
-class AddNoteLoading extends NoteNoteState {}
+class AddNoteLoading extends AddNoteState {}
 
-class AddNoteSuccess extends NoteNoteState {}
+class AddNoteSuccess extends AddNoteState {}
 
-class AddNoteFailer extends NoteNoteState {
+class AddNoteFailer extends AddNoteState {
   final String errormassage;
 
   AddNoteFailer(this.errormassage);
