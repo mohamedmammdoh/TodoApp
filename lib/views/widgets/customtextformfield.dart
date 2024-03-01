@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/constants.dart';
 
 class customtextformfield extends StatelessWidget {
-  const customtextformfield(
-      {super.key, required this.hint_text, this.maxlines});
+  customtextformfield({
+    super.key,
+    required this.hint_text,
+    this.maxlines,
+    required this.controller,
+    required this.validator,
+  });
   final String hint_text;
   final int? maxlines;
+  TextEditingController controller = TextEditingController();
+  String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
       maxLines: maxlines,
       cursorColor: kprimary_color,
       decoration: InputDecoration(
@@ -29,11 +38,11 @@ class customtextformfield extends StatelessWidget {
             Radius.circular(15),
           ),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: kprimary_color,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(15),
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/views/widgets/CustomAppbar.dart';
 import 'package:todoapp/views/widgets/NotesViewBody.dart';
-import 'package:todoapp/views/widgets/listviewfornotes.dart';
 import 'package:todoapp/views/widgets/showmodelbottonsheet.dart';
 
 class NotesView extends StatelessWidget {
@@ -9,33 +9,6 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Notes',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white.withOpacity(0.3),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(3.0),
-                  child: Icon(
-                    Icons.search,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                )),
-          ),
-        ],
-      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white.withOpacity(0.2),
         onPressed: () {
@@ -52,7 +25,19 @@ class NotesView extends StatelessWidget {
           size: 28,
         ),
       ),
-      body: NoteViewBody(),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 50),
+        child: Column(
+          children: [
+            customappbar(
+              icon: Icons.search,
+              onpresed: () {},
+              tilte: 'Notes',
+            ),
+            const Expanded(child: NoteViewBody()),
+          ],
+        ),
+      ),
     );
   }
 }

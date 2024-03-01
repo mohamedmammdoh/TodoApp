@@ -8,12 +8,6 @@ class NoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: listviewfornotes(),
-        ),
-      ],
-    );
+    return const listviewfornotes();
   }
 }

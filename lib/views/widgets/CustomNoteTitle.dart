@@ -7,7 +7,7 @@ class CustomNoteTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0, right: 20, left: 20),
+      padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(
